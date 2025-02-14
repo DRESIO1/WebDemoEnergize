@@ -23,54 +23,127 @@
 
         canvas {
             /* margin-top: 20px; */
-            border: 1px solid black;
+            /* border: 1px solid black; */
+            position: absolute; 
+            top: 0; 
+            left: 0;
+        }
+
+        .custom16_9 {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-height: 100%;
+        }
+
+        .custom4_3 {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            max-height: 100%;
+        }
+
+        .custom9_16 {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            max-height: 100%;
+        }
+
+        .custom3_4 {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            max-height: 100%;
+        }
+
+        .custom1_1 {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-height: 100%;
+        }
+
+        .custom100 {
+            /* width: 100%; */
+            height: 100%;
+        }
+
+        .custom16_9_h {
+            aspect-ratio: 16 / 9;
+            width: auto;
+            height: 100%;
+        }
+
+        .custom4_3_h {
+            aspect-ratio: 4 / 3;
+            width: auto;
+            height: 100%;
+        }
+
+        .custom9_16_h {
+            aspect-ratio: 9 / 16;
+            width: auto;
+            height: 100%;
+        }
+
+        .custom3_4_h {
+            aspect-ratio: 3 / 4;
+            width: auto;
+            height: 100%;
+        }
+
+        .custom1_1_h {
+            aspect-ratio: 1 / 1;
+            width: auto;
+            height: 100%;
         }
 
         .button1 {
             margin-left: 10px;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 10px;
             text-align: center;
             cursor: pointer;
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 16px;
-            width: 65px;
-            /* Ensure both buttons have the same width */
+            max-width: 65px;
+
         }
 
         .button2 {
             margin-left: 10px;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 10px;
             text-align: center;
             cursor: pointer;
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 16px;
-            width: 100px;
-            /* Ensure both buttons have the same width */
+            max-width: 100px;
+        }
+
+        .button3 {
+            margin-left: 10px;
+            display: inline-block;
+            padding: 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            max-width: 180px;
         }
 
         .button4 {
             margin-left: 10px;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 10px;
             text-align: center;
             cursor: pointer;
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 16px;
-            width: 65px;
-            /* Ensure both buttons have the same width */
+            max-width: 65px;
         }
 
-        .button3,
-        .button5,
-        .button6 {
+        .button5 {
             margin-left: 10px;
             display: inline-block;
             padding: 10px 20px;
@@ -79,9 +152,22 @@
             color: white;
             border: none;
             border-radius: 10px;
+            max-width: 180px;
+        }
+
+        .button6,
+        .button7 {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 10px;
             font-size: 16px;
-            width: 180px;
-            /* Ensure both buttons have the same width */
+            width: 85px;
         }
 
         .button1 {
@@ -105,7 +191,11 @@
         }
 
         .button6 {
-            background-color: #4907ff;
+            background-color: #00a244;
+        }
+
+        .button7 {
+            background-color: #f04a38;
         }
 
         .button1:hover,
@@ -113,7 +203,8 @@
         .button3:hover,
         .button4:hover,
         .button5:hover,
-        .button6:hover {
+        .button6:hover,
+        .button7:hover {
             opacity: 0.8;
         }
 
@@ -167,24 +258,40 @@
         }
 
         .data-output {
-            float: left;
-            width: 960px;
-            height: 200px;
-            /* border: 1px solid black; */
-            /* padding: 10px; */
+            width: 100%;
+            height: auto;
+            min-height: 10px;
+            max-height: calc(4vh + 2px);
+            /* Dynamic height based on viewport */
             box-sizing: border-box;
             overflow-y: auto;
-            /* Add this line to enable vertical scrolling */
             overflow-x: hidden;
-            /* Add this line to hide horizontal overflow */
+            /* padding: 5px; */
+        }
+
+        .data-outputbox {
+            width: 100%;
+            height: 100%;
+            /* min-height: 10px; */
+            /* max-height: calc(4vh + 2px); */
+            /* Dynamic height based on viewport */
+            box-sizing: border-box;
+            overflow-y: auto;
+            overflow-x: hidden;
+            /* padding: 5px; */
         }
 
         .cards {
-            margin-top: 5px;
-            width: 960px;
-            height: 50px;
-            border-radius: 20px;
-            /* background: #f4f8ff; */
+            width: 100%;
+            min-width: 280px;
+            /* Minimum width for mobile */
+            max-width: 100%;
+            height: auto;
+            min-height: calc(4vh + 2px);
+            /* Dynamic height based on viewport */
+            margin: 5px 0;
+            border-radius: 15px;
+            /* Responsive border radius */
             background: #f4f8ff;
             background-image: radial-gradient(at 88% 40%,
                     hsla(240, 0%, 20%, 0) 0px,
@@ -194,10 +301,43 @@
                 radial-gradient(at 0% 64%, hsla(222, 77%, 50%, 0.5) 0px, transparent 100%),
                 radial-gradient(at 41% 94%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%),
                 radial-gradient(at 100% 99%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%);
-            box-shadow: 15px 15px 30px #dfdfdf,
-                -15px -15px 30px #ffffff;
-            /* text color in white */
+            box-shadow:
+                clamp(5px, 1vw, 15px) clamp(5px, 1vw, 15px) clamp(10px, 2vw, 30px) #dfdfdf,
+                clamp(-5px, -1vw, -15px) clamp(-5px, -1vw, -15px) clamp(10px, 2vw, 30px) #ffffff;
             color: #ffffff;
+        }
+
+        /* Media queries for different screen sizes */
+        @media screen and (max-width: 768px) {
+            .cards {
+                margin: 3px 0;
+            }
+
+            .data-output {
+                font-size: clamp(8px, 2vw, 14px);
+                max-height: calc(4vh + 15px);
+            }
+
+            .data-outputbox {
+                font-size: clamp(8px, 2vw, 14px);
+                max-height: calc(4vh + 15px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .cards {
+                margin: 2px 0;
+            }
+
+            .data-output {
+                font-size: clamp(8px, 1.8vw, 12px);
+                max-height: calc(3vh + 10px);
+            }
+
+            .data-outputbox {
+                font-size: clamp(8px, 1.8vw, 12px);
+                max-height: calc(3vh + 10px);
+            }
         }
 
         .menu {
@@ -244,14 +384,14 @@
             position: relative;
             display: inline-block;
             width: 125px;
-            height: 135x;
+            height: 135px;
         }
 
         .orientation-canvas-container img {
             position: block;
             display: inline-block;
             width: 250px;
-            height: 270x;
+            height: 270px;
         }
 
         .title-main {
@@ -282,7 +422,7 @@
             margin: 5px 0;
             border: 1px solid #ddd;
             border-radius: 4px;
-            width: 960px;
+            width: 99%;
         }
 
         details>div {
@@ -541,6 +681,7 @@
             margin-top: 5px;
             width: 960px;
             height: 270px;
+            max-width: 450px;
             border-radius: 30px;
             background: #f4f8ff;
             background-image: radial-gradient(at 88% 40%,
@@ -551,8 +692,8 @@
                 radial-gradient(at 0% 64%, hsla(222, 77%, 50%, 0.5) 0px, transparent 100%),
                 radial-gradient(at 41% 94%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%),
                 radial-gradient(at 100% 99%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%);
-            box-shadow: 15px 15px 30px #dfdfdf,
-                -15px -15px 30px #ffffff;
+            /* box-shadow: 15px 15px 30px #dfdfdf,
+                -15px -15px 30px #ffffff; */
         }
 
         .smallCardsmenu {
@@ -593,8 +734,10 @@
         /* Container for the circle image */
         #circleContainer {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 80%;
+            height: auto;
+            min-width: 150px;
+            max-width: 200px;
             margin: 0 auto;
             /* center horizontally */
         }
@@ -680,40 +823,47 @@
 </head>
 
 <body>
-    <!-- put the Dresio Logo_black logo on the top left -->
     <div
-        style="background-color: #060060; width: 100%; padding: 5px 0; position: fixed; top: 0; left: 0; z-index: 100;">
-        <div style="display: flex; justify-content: flex-start; align-items: center; padding: 0 10px; gap: 20px;">
-            <div style="display: flex; flex-direction: column;">
-                <h2 style="margin-top: 0px; color: #ddd; margin-left: 10px; text-align: center;">MSK Demo Version 1.6.2.5</h2>
-            </div>
+        style="background-color: #060060; width: 100%; padding: 5px 0; position: fixed; top: 0; left: 0; z-index: 100; display: flex;">
+        <div style="display: flex; justify-content: flex-start; align-items: center; padding: 0 0px; gap: 10px;">
+            <h2
+                style="margin-top: 0px; color: #ddd; margin-left: 10px; text-align: center; font-size: clamp(11px, 3vw, 22px);">
+                MSK Demo Version 1.6.3.0
+            </h2>
 
-            <div style="display: flex; gap: 5px; align-items: center; justify-content: center;">
-                <div id="callAPIButton" class="button1" style="text-align: center;">Start API</div>
-                <div id="startCamButton" class="button2" style="text-align: center;">Start Camera</div>
-                <div id="startTrackingButton" class="button3" style="text-align: center;">Start Camera & Tracking</div>
-                <div id="stopButton" class="button4" style="text-align: center;">Stop All</div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <div id="callAPIButton" class="button1"
+                    style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Start API</div>
+                <div id="startCamButton" class="button2"
+                    style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Start Camera</div>
+                <div id="startTrackingButton" class="button3"
+                    style="text-align: center; flex-shrink: 1; font-size: clamp(11px, 2vw, 15px);">Start Camera &
+                    Tracking</div>
+                <div id="stopButton" class="button4"
+                    style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Stop All</div>
             </div>
         </div>
     </div>
-
-    <div style="padding-top: 25px; position: relative;">
+    <div style="display: flex; margin-top: 50px;">
         <div
-        style="display: flex; gap: 10px; margin-top: 30px; margin-left: 5px; position: sticky; top: 106px; background: rgb(247, 245, 255); z-index: 99;">
-            <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; ">
-                <div class="cards" style="margin-top: 0; position: sticky; top: 0px; margin-bottom: 5px; ">
-                    <div class="data-output">
-                        <pre id="dataOutput"></pre>
+            style="display: flex; gap: 10px; margin-top: 30px; margin-left: 5px; position: sticky; top: 106px; background: rgb(247, 245, 255); z-index: 99;">
+            <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column;">
+                <div style="display: flex; position: sticky; width: 99%; max-width: 99vw; box-sizing: border-box;">
+
+                    <div class="cards"
+                        style="margin-top: 0; position: sticky; top: 0px; margin-bottom: 5px; flex-shrink: 1;">
+                        <div class="data-output" style="flex-shrink: 1; margin-top: 0; top: 0px;">
+                            <pre id="dataOutput"
+                                style="text-align: left; font-size: clamp(10px, 2.5vw, 18px); word-wrap: break-word; white-space: pre-wrap;"></pre>
+                        </div>
                     </div>
                 </div>
 
-                <div class="canvas-container" style="position: relative;">
+                <div class="canvas-container" style="display: flex; position: sticky; width: 99%; max-width: 99vw;">
 
-                    <iframe id="Accudex_API" src="" frameBorder="1" width="960px" height="540px"
-                        allow="camera *;"></iframe>
+                    <iframe id="Accudex_API" src="" allow="camera *;"></iframe>
 
-                    <canvas class="canvas" id="canvas" width="960" height="540"
-                        style="position: absolute; top: 0; left: 0;"></canvas>
+                    <canvas class="canvas" id="canvas"></canvas>
 
                     <div class="orientation-canvas-container" id="orientation-canvas"
                         style="position: absolute; bottom: 10px; right: 10px; width: 250px; height: 270px; z-index: 100;">
@@ -731,32 +881,33 @@
                             <div class="face"></div>
                         </div>
                     </div>
+                    <div style="position: absolute; top: 2%; left: 78%;">
+                        <button id="startModuleButton"
+                            class="button6">Start</button>
+                        <button id="stopModuleButton"
+                            class="button7">Stop</button>
+                    </div>
                 </div>
 
-                <div style="display: flex; gap: 15px; margin-left: 5px; margin-top: 0px;">
-                    <div class="smallCards" style="width:310px;">
+                <div style="display: flex; gap: 5px; margin-left: 5px; margin-top: 0px; position: sticky; width: 99%; max-width: 99vw;">
+                    <div class="smallCards" style="flex-shrink: 1;">
                         <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Live Data</h2>
-                        <div class="data-output" style="color:#ffffff">
-                            <pre id="dataOutput1"></pre>
+                        <div class="data-outputbox" style="color:#ffffff">
+                            <pre id="dataOutput1" style="font-size: 15"></pre>
                         </div>
                     </div>
 
-                    <div class="smallCards" style="width:310px;">
+                    <div class="smallCards" style="flex-shrink: 1;">
                         <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Result</h2>
-                        <div class="data-output" style="color:#ffffff">
-                            <pre id="dataOutput2"></pre>
+                        <div class="data-outputbox" style="color:#ffffff">
+                            <pre id="dataOutput2" style="font-size: 16"></pre>
                         </div>
                     </div>
 
-                    <div class="smallCards" style="width:310px;">
-                        <!-- <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Result</h2>
-                        <div class="data-output"  style="color:#ffffff">
-                            <pre id="dataOutput3"></pre>
-                        </div> -->
+                    <div class="smallCards" style="flex-shrink: 2;">
                         <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Center of Mass</h2>
                         <div id="circleContainer">
-                            <!-- Replace the src below with your own circle image URL -->
-                            <img src="./image/Balance_Radar_Window.png" alt="Circle" />
+                            <img src="https://static.wixstatic.com/media/ae2716_fee0facf269347fc96c7f3a43d4cee1f~mv2.png" alt="Circle"/>
                             <div id="dot"></div>
                         </div>
                     </div>
@@ -802,9 +953,6 @@
                     <h3 style="gap: 10px; ">Module Selection:</h3>
                     <div style="display: flex; gap: 10px; margin-bottom: 10px; margin-top: 15px;">
                         <select id="moduleSelect" style="width:550px;"></select>
-                        <!-- <button id="sendModuleMessage" style="height: 30px; width: 160px; padding: 0px;"
-                        class="button5">Start
-                        Module</button> -->
                     </div>
                     <div style="display: flex; gap: 10px; margin-bottom: 0px; margin-top: 10px;">
                         <h3 style="gap: 10px; ">Orientation Check:</h3>
@@ -866,7 +1014,7 @@
         </div>
 
     </div>
-    <script src="./API_Production/PModule.js"></script>
+    <script src="./Production/PModule.js"></script>
 
 </body>
 
