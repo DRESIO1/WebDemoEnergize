@@ -21,11 +21,11 @@
             align-items: center; */
         }
 
-        canvas {
+        .iFramecanvas {
             /* margin-top: 20px; */
             /* border: 1px solid black; */
-            position: absolute; 
-            top: 0; 
+            position: absolute;
+            top: 0;
             left: 0;
         }
 
@@ -98,11 +98,14 @@
             margin-left: 10px;
             display: inline-block;
             padding: 10px 10px;
+            padding: 10px 10px;
             text-align: center;
             cursor: pointer;
             color: white;
             border: none;
             border-radius: 10px;
+            max-width: 65px;
+
             max-width: 65px;
 
         }
@@ -111,11 +114,25 @@
             margin-left: 10px;
             display: inline-block;
             padding: 10px 10px;
+            padding: 10px 10px;
             text-align: center;
             cursor: pointer;
             color: white;
             border: none;
             border-radius: 10px;
+            max-width: 100px;
+        }
+
+        .button3 {
+            margin-left: 10px;
+            display: inline-block;
+            padding: 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            max-width: 180px;
             max-width: 100px;
         }
 
@@ -145,6 +162,7 @@
 
         .button5 {
             margin-left: 10px;
+            margin-bottom: 10px;
             display: inline-block;
             padding: 10px 20px;
             text-align: center;
@@ -160,14 +178,14 @@
             margin-left: 10px;
             margin-bottom: 10px;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 10px;
             text-align: center;
             cursor: pointer;
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 16px;
-            width: 85px;
+            font-size: 13px;
+            width: 65px;
         }
 
         .button1 {
@@ -196,6 +214,11 @@
 
         .button7 {
             background-color: #f04a38;
+            background-color: #00a244;
+        }
+
+        .button7 {
+            background-color: #f04a38;
         }
 
         .button1:hover,
@@ -203,6 +226,8 @@
         .button3:hover,
         .button4:hover,
         .button5:hover,
+        .button6:hover,
+        .button7:hover {
         .button6:hover,
         .button7:hover {
             opacity: 0.8;
@@ -263,6 +288,11 @@
             min-height: 10px;
             max-height: calc(4vh + 2px);
             /* Dynamic height based on viewport */
+            width: 100%;
+            height: auto;
+            min-height: 10px;
+            max-height: calc(4vh + 2px);
+            /* Dynamic height based on viewport */
             box-sizing: border-box;
             overflow-y: auto;
             overflow-x: hidden;
@@ -271,7 +301,7 @@
 
         .data-outputbox {
             width: 100%;
-            height: 100%;
+            height: 60%;
             /* min-height: 10px; */
             /* max-height: calc(4vh + 2px); */
             /* Dynamic height based on viewport */
@@ -281,7 +311,26 @@
             /* padding: 5px; */
         }
 
+        .data-outputbox3 {
+            width: 100%;
+            height: auto;
+            /* Dynamic height based on viewport */
+            box-sizing: border-box;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
         .cards {
+            width: 100%;
+            min-width: 280px;
+            /* Minimum width for mobile */
+            max-width: 100%;
+            height: auto;
+            min-height: calc(4vh + 2px);
+            /* Dynamic height based on viewport */
+            margin: 5px 0;
+            border-radius: 15px;
+            /* Responsive border radius */
             width: 100%;
             min-width: 280px;
             /* Minimum width for mobile */
@@ -304,6 +353,9 @@
             box-shadow:
                 clamp(5px, 1vw, 15px) clamp(5px, 1vw, 15px) clamp(10px, 2vw, 30px) #dfdfdf,
                 clamp(-5px, -1vw, -15px) clamp(-5px, -1vw, -15px) clamp(10px, 2vw, 30px) #ffffff;
+            box-shadow:
+                clamp(5px, 1vw, 15px) clamp(5px, 1vw, 15px) clamp(10px, 2vw, 30px) #dfdfdf,
+                clamp(-5px, -1vw, -15px) clamp(-5px, -1vw, -15px) clamp(10px, 2vw, 30px) #ffffff;
             color: #ffffff;
         }
 
@@ -322,6 +374,15 @@
                 font-size: clamp(8px, 2vw, 14px);
                 max-height: calc(4vh + 15px);
             }
+
+            .data-outputbox3 {
+                font-size: clamp(10px, 2vw, 14px);
+                /* max-height: calc(4vh + 15px); */
+            }
+
+            .chevron_text {
+                font-size: clamp(10px, 2vw, 14px);
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -337,6 +398,15 @@
             .data-outputbox {
                 font-size: clamp(8px, 1.8vw, 12px);
                 max-height: calc(3vh + 10px);
+            }
+
+            .data-outputbox3 {
+                font-size: clamp(10px, 1.8vw, 12px);
+                /* max-height: calc(3vh + 10px); */
+            }
+
+            .chevron_text {
+                font-size: clamp(10px, 1.8vw, 12px);
             }
         }
 
@@ -385,12 +455,14 @@
             display: inline-block;
             width: 125px;
             height: 135px;
+            height: 135px;
         }
 
         .orientation-canvas-container img {
             position: block;
             display: inline-block;
             width: 250px;
+            height: 270px;
             height: 270px;
         }
 
@@ -422,6 +494,7 @@
             margin: 5px 0;
             border: 1px solid #ddd;
             border-radius: 4px;
+            width: 99%;
             width: 99%;
         }
 
@@ -682,6 +755,7 @@
             width: 960px;
             height: 270px;
             max-width: 450px;
+            max-width: 450px;
             border-radius: 30px;
             background: #f4f8ff;
             background-image: radial-gradient(at 88% 40%,
@@ -692,6 +766,8 @@
                 radial-gradient(at 0% 64%, hsla(222, 77%, 50%, 0.5) 0px, transparent 100%),
                 radial-gradient(at 41% 94%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%),
                 radial-gradient(at 100% 99%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%);
+            /* box-shadow: 15px 15px 30px #dfdfdf,
+                -15px -15px 30px #ffffff; */
             /* box-shadow: 15px 15px 30px #dfdfdf,
                 -15px -15px 30px #ffffff; */
         }
@@ -734,6 +810,10 @@
         /* Container for the circle image */
         #circleContainer {
             position: relative;
+            width: 80%;
+            height: auto;
+            min-width: 150px;
+            max-width: 200px;
             width: 80%;
             height: auto;
             min-width: 150px;
@@ -819,11 +899,292 @@
                 transform: rotateX(360deg) rotateY(360deg);
             }
         }
+
+        /* Full body checker */
+        #checkbox {
+            display: none;
+        }
+
+        .switch2 {
+            position: relative;
+            width: 35px;
+            height: 35px;
+            background-color: rgb(255, 5, 5);
+            border-radius: 50%;
+            z-index: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgb(255, 126, 126);
+            box-shadow: 0px 0px 3px rgb(248, 248, 248) inset;
+            color: white;
+        }
+
+        .switch2_5 {
+            position: relative;
+            width: 35px;
+            height: 35px;
+            background-color: rgb(255, 242, 0);
+            border-radius: 50%;
+            z-index: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgb(253, 255, 126);
+            box-shadow: 0px 0px 3px rgb(246, 247, 177) inset;
+            color: white;
+        }
+
+        .switch3 {
+            position: relative;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            z-index: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 1px rgb(150, 255, 194) inset,
+                0px 0px 2px rgb(150, 255, 194) inset,
+                0px 0px 10px rgb(150, 255, 194) inset,
+                0px 0px 40px rgb(150, 255, 194),
+                0px 0px 100px rgb(150, 255, 194),
+                0px 0px 5px rgb(150, 255, 194);
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgb(62, 202, 85);
+            color: white;
+        }
+
+        .switch2:nth-child(odd) {
+            animation: pulse54012 500ms ease infinite alternate;
+        }
+
+        .switch2:nth-child(even) {
+            animation: pulse54012 500ms ease infinite alternate 250ms;
+        }
+
+        .switch2_5:nth-child(odd) {
+            animation: pulse54012 500ms ease infinite alternate;
+        }
+
+        .switch2_5:nth-child(even) {
+            animation: pulse54012 500ms ease infinite alternate 250ms;
+        }
+
+        .switch3:nth-child(odd) {
+            animation: pulse54012 500ms ease infinite alternate;
+        }
+
+        .switch3:nth-child(even) {
+            animation: pulse54012 500ms ease infinite alternate 250ms;
+        }
+
+        /* Arrow Animation */
+        .chevrons {
+            margin-left: 10px;
+            width: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            --color: #1cc256;
+
+        }
+
+        .chevron_text {
+            margin-left: 15px;
+            /* font-size: 16px; */
+            border-radius: 15px;
+            background: #f4f8ff;
+            background-image: radial-gradient(at 88% 40%,
+                    hsla(240, 0%, 20%, 0) 0px,
+                    transparent 100%),
+                radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 0.5) 0px, transparent 0%),
+                radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 0.5) 0px, transparent 0%),
+                radial-gradient(at 0% 64%, hsla(222, 77%, 50%, 0.5) 0px, transparent 100%),
+                radial-gradient(at 41% 94%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%),
+                radial-gradient(at 100% 99%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%);
+            color: #ffffff;
+            padding: 5px;
+        }
+
+        .directionBack {
+            transform: rotate(180deg);
+        }
+
+        .directionFront {
+            transform: rotate(0deg);
+        }
+
+        .directionRight {
+            transform: rotate(-90deg);
+        }
+
+        .directionLeft {
+            transform: rotate(90deg);
+        }
+
+        .chevrondown {
+            position: relative;
+            border: solid var(--color);
+            border-width: 0 10px 10px 0;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+        }
+
+        .chevrondown:nth-child(odd) {
+            animation: pulse54012 500ms ease infinite alternate;
+        }
+
+        .chevrondown:nth-child(even) {
+            animation: pulse54012 500ms ease infinite alternate 250ms;
+        }
+
+        @keyframes pulse54012 {
+            from {
+                opacity: 0.3;
+            }
+
+            to {
+                opacity: 0.9;
+            }
+        }
+
+        /* Chart */
+        .outter-chart-container {
+            width: 25%;
+            aspect-ratio: 4/3;
+            height: auto;
+            border-radius: 15px;
+            background: #f4f8ff;
+            background-image: radial-gradient(at 88% 40%,
+                    hsla(240, 0%, 20%, 0) 0px,
+                    transparent 100%),
+                radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 0.5) 0px, transparent 0%),
+                radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 0.5) 0px, transparent 0%),
+                radial-gradient(at 0% 64%, hsla(222, 77%, 50%, 0.5) 0px, transparent 100%),
+                radial-gradient(at 41% 94%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%),
+                radial-gradient(at 100% 99%, hsla(222, 79%, 49%, 0.5) 0px, transparent 100%);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 1rem;
+            font-family: sans-serif;
+            align-items: center;
+            display: flex;
+        }
+
+        /* Tab container styling */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tab-button {
+            background: #ddd;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .tab-button.active {
+            background: #4a90e2;
+            color: #fff;
+        }
+
+        .tab-button:hover {
+            background: #1c00bd;
+            color: #fff;
+        }
+
+
+
+        /* Chart container styling */
+        .chart-container {
+            width: 90%;
+            height: auto;
+            display: none;
+            aspect-ratio: 16/9;
+            /* min-height: 100px;  */
+            /* Default to hidden for all tabs */
+            background: linear-gradient(135deg, #293e8a 0%, #3a4b8a 43%, #092795 100%);
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            padding: 1rem;
+            /* margin-bottom: 1rem; */
+            max-width: 800px;
+            /* margin: 0 auto 2rem auto; */
+            /* Center horizontally */
+
+        }
+
+        .chart-container.active {
+            display: block;
+            /* Show the active tab*/
+        }
+
+        /* Chart header + legend */
+        .chart-header {
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-header h2 {
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+            color: #ffffff;
+            /* or your preferred color */
+        }
+
+        .chart-legend {
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        /* Canvas styling */
+        .chart-container canvas {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            /* responsive; will scale */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #0465b9;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .chart-container canvas {
+                max-height: 100px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .outter-chart-container {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div
+        style="background-color: #060060; width: 100%; padding: 5px 0; position: fixed; top: 0; left: 0; z-index: 100; display: flex;">
+        <div style="display: flex; justify-content: flex-start; align-items: center; padding: 0 0px; gap: 10px;">
+            <h2
+                style="margin-top: 0px; color: #ddd; margin-left: 10px; text-align: center; font-size: clamp(11px, 3vw, 22px);">
+                MSK Demo Version 1.6.3.1
+            </h2>
         style="background-color: #060060; width: 100%; padding: 5px 0; position: fixed; top: 0; left: 0; z-index: 100; display: flex;">
         <div style="display: flex; justify-content: flex-start; align-items: center; padding: 0 0px; gap: 10px;">
             <h2
@@ -841,11 +1202,32 @@
                     Tracking</div>
                 <div id="stopButton" class="button4"
                     style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Stop All</div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <div id="callAPIButton" class="button1"
+                    style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Start API</div>
+                <div id="startCamButton" class="button2"
+                    style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Start Camera</div>
+                <div id="startTrackingButton" class="button3"
+                    style="text-align: center; flex-shrink: 1; font-size: clamp(11px, 2vw, 15px);">Start Camera &
+                    Tracking</div>
+                <div id="stopButton" class="button4"
+                    style="text-align: center; flex-shrink: 2; font-size: clamp(11px, 2vw, 15px);">Stop All</div>
             </div>
         </div>
     </div>
     <div style="display: flex; margin-top: 50px;">
+    <div style="display: flex; margin-top: 50px;">
         <div
+            style="display: flex; gap: 10px; margin-top: 30px; margin-left: 5px; position: sticky; top: 106px; background: rgb(247, 245, 255); z-index: 99;">
+            <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column;">
+                <div style="display: flex; position: sticky; width: 99%; max-width: 99vw; box-sizing: border-box;">
+
+                    <div class="cards"
+                        style="margin-top: 0; position: sticky; top: 0px; margin-bottom: 5px; flex-shrink: 1;">
+                        <div class="data-output" style="flex-shrink: 1; margin-top: 0; top: 0px;">
+                            <pre id="dataOutput"
+                                style="text-align: left; font-size: clamp(10px, 2.5vw, 18px); word-wrap: break-word; white-space: pre-wrap;"></pre>
+                        </div>
             style="display: flex; gap: 10px; margin-top: 30px; margin-left: 5px; position: sticky; top: 106px; background: rgb(247, 245, 255); z-index: 99;">
             <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column;">
                 <div style="display: flex; position: sticky; width: 99%; max-width: 99vw; box-sizing: border-box;">
@@ -860,10 +1242,12 @@
                 </div>
 
                 <div class="canvas-container" style="display: flex; position: sticky; width: 99%; max-width: 99vw;">
+                <div class="canvas-container" style="display: flex; position: sticky; width: 99%; max-width: 99vw;">
 
                     <iframe id="Accudex_API" src="" allow="camera *;"></iframe>
+                    <iframe id="Accudex_API" src="" allow="camera *;"></iframe>
 
-                    <canvas class="canvas" id="canvas"></canvas>
+                    <canvas class="iFramecanvas" id="iFramecanvas"></canvas>
 
                     <div class="orientation-canvas-container" id="orientation-canvas"
                         style="position: absolute; bottom: 10px; right: 10px; width: 250px; height: 270px; z-index: 100;">
@@ -882,27 +1266,58 @@
                         </div>
                     </div>
 
+                    <div class="data-outputbox3"
+                        style="position: absolute; top: 0.5%; left: 1%; display: flex; align-items: center;">
+                        <div class="switch2" id="full_body_switch"></div>
+                        <pre id="full_body_switch_text" class="chevron_text"></pre>
+
+                        <div class="chevrons directionFront" id="chevron_arrows">
+                            <div class="chevrondown"></div>
+                            <div class="chevrondown"></div>
+
+                        </div>
+                        <pre id="chevron_text" class="chevron_text"></pre>
+
+                        <button id="startModuleButton" class="button6">Start Module</button>
+                        <button id="stopModuleButton" class="button7">Stop Module</button>
+                    </div>
+
+                    <div class="outter-chart-container" id="chartBigContainer"
+                        style="position: absolute; bottom: 2%; left: 1%;">
+                        <div class="tabs" id="tabsRow">
+                        </div>
+
+                        <div id="chartsWrapper">
+                        </div>
+                    </div>
                 </div>
 
-                <div style="display: flex; gap: 5px; margin-left: 5px; margin-top: 0px; position: sticky; width: 99%; max-width: 99vw;">
+                <div
+                    style="display: flex; gap: 5px; margin-left: 5px; margin-top: 0px; position: sticky; width: 99%; max-width: 99vw;">
                     <div class="smallCards" style="flex-shrink: 1;">
                         <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Live Data</h2>
+
                         <div class="data-outputbox" style="color:#ffffff">
                             <pre id="dataOutput1" style="font-size: 15"></pre>
                         </div>
                     </div>
 
                     <div class="smallCards" style="flex-shrink: 1;">
+                    <div class="smallCards" style="flex-shrink: 1;">
                         <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Result</h2>
+                        <div class="data-outputbox" style="color:#ffffff">
+                            <pre id="dataOutput2" style="font-size: 16"></pre>
                         <div class="data-outputbox" style="color:#ffffff">
                             <pre id="dataOutput2" style="font-size: 16"></pre>
                         </div>
                     </div>
 
                     <div class="smallCards" style="flex-shrink: 2;">
+                    <div class="smallCards" style="flex-shrink: 2;">
                         <h2 style="margin-left: 20px; margin-top: 20px; color:#ffffff">Center of Mass</h2>
                         <div id="circleContainer">
-                            <img src="https://static.wixstatic.com/media/ae2716_fee0facf269347fc96c7f3a43d4cee1f~mv2.png" alt="Circle"/>
+                            <img src="https://static.wixstatic.com/media/ae2716_fee0facf269347fc96c7f3a43d4cee1f~mv2.png"
+                                alt="Circle" />
                             <div id="dot"></div>
                         </div>
                     </div>
@@ -1009,6 +1424,7 @@
         </div>
 
     </div>
+
     <script src="./API_Production/PModule.js"></script>
 
 </body>
